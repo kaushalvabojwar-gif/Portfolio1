@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kaushal Abojwar | Instrumentation & Control Engineer</title>
+  <meta name="description" content="Portfolio of Kaushal Abojwar — I&C Engineering student specialising in PLC programming, embedded systems, and industrial IoT.">
+
+  <!-- Force dark background -->
+  <style>html,body{margin:0;background:#0d0d0d;min-height:100vh;}</style>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23dc2626' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='4' y='4' width='16' height='16' rx='2'/%3E%3Crect x='9' y='9' width='6' height='6'/%3E%3Cline x1='9' y1='1' x2='9' y2='4'/%3E%3Cline x1='15' y1='1' x2='15' y2='4'/%3E%3C/svg%3E">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700;9..40,800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ════════ NAVBAR ════════ -->
+<nav class="navbar" id="navbar">
+  <div class="navbar-inner">
+    <button class="navbar-brand" onclick="scrollTo('home')">
+      <span class="navbar-brand-dot"></span>
+      KAUSHAL ABOJWAR
+    </button>
+
+    <div class="navbar-links">
+      <button class="navbar-link active" data-section="home"    onclick="scrollTo('home')"><span class="navbar-num">01</span> Home</button>
+      <button class="navbar-link"        data-section="about"   onclick="scrollTo('about')"><span class="navbar-num">02</span> About</button>
+      <button class="navbar-link"        data-section="education" onclick="scrollTo('education')"><span class="navbar-num">03</span> Education</button>
+      <button class="navbar-link"        data-section="experience" onclick="scrollTo('experience')"><span class="navbar-num">04</span> Experience</button>
+      <button class="navbar-link"        data-section="projects" onclick="scrollTo('projects')"><span class="navbar-num">05</span> Projects</button>
+      <button class="navbar-link"        data-section="skills"  onclick="scrollTo('skills')"><span class="navbar-num">06</span> Skills</button>
+      <button class="navbar-link"        data-section="contact" onclick="scrollTo('contact')"><span class="navbar-num">07</span> Contact</button>
+    </div>
+
+    <div style="display:flex;align-items:center;gap:8px">
+      <a href="Kaushal_Resume.pdf" download class="navbar-resume">&#8595; Resume</a>
+      <button class="navbar-toggle" id="menu-toggle" onclick="toggleMenu()" aria-label="Menu">&#9776;</button>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobile-menu">
+  <button class="mobile-menu-link" onclick="scrollTo('home')"><span style="font-family:var(--f-mono);font-size:.65rem;color:var(--text-faint);width:22px">01</span> Home</button>
+  <button class="mobile-menu-link" onclick="scrollTo('about')"><span style="font-family:var(--f-mono);font-size:.65rem;color:var(--text-faint);width:22px">02</span> About</button>
+  <button class="mobile-menu-link" onclick="scrollTo('education')"><span style="font-family:var(--f-mono);font-size:.65rem;color:var(--text-faint);width:22px">03</span> Education</button>
+  <button class="mobile-menu-link" onclick="scrollTo('experience')"><span style="font-family:var(--f-mono);font-size:.65rem;color:var(--text-faint);width:22px">04</span> Experience</button>
+  <button class="mobile-menu-link" onclick="scrollTo('projects')"><span style="font-family:var(--f-mono);font-size:.65rem;color:var(--text-faint);width:22px">05</span> Projects</button>
+  <button class="mobile-menu-link" onclick="scrollTo('skills')"><span style="font-family:var(--f-mono);font-size:.65rem;color:var(--text-faint);width:22px">06</span> Skills</button>
+  <button class="mobile-menu-link" onclick="scrollTo('contact')"><span style="font-family:var(--f-mono);font-size:.65rem;color:var(--text-faint);width:22px">07</span> Contact</button>
+  <a href="Kaushal_Resume.pdf" download class="btn btn-solid" style="margin-top:8px;justify-content:center">&#8595; Download Resume</a>
+</div>
+
+<div class="page">
+
+<!-- ════════ HERO ════════ -->
+<section id="home" class="section" style="border-bottom:1px solid var(--border);padding:0;min-height:calc(100vh - 60px);display:flex;align-items:center">
+  <div class="container">
+    <div class="hero">
+      <div>
+        <div class="hero-label">
+          <span style="width:7px;height:7px;background:var(--accent);border-radius:50%;display:inline-block"></span>
+          B.E. Instrumentation &amp; Control Engineering &middot; DYPCOE, Pune
+        </div>
+
+        <h1 class="hero-name">Kaushal<br><span>Abojwar</span></h1>
+
+        <div class="hero-role-row">
+          <span>&gt;</span>
+          <span class="hero-role-typed" id="typewriter"></span>
+        </div>
+
+        <p class="hero-tagline">
+          Building the next generation of industrial automation, control systems, and connected IoT frameworks &mdash; from PLC logic to embedded edge intelligence.
+        </p>
+
+        <div class="hero-ctas">
+          <button class="btn btn-solid" onclick="scrollTo('projects')">View Projects &rarr;</button>
+          <button class="btn btn-ghost" onclick="scrollTo('contact')">Get In Touch</button>
+          <a href="Kaushal_Resume.pdf" download class="btn btn-ghost">&#8595; Resume</a>
+        </div>
+      </div>
+
+      <div class="hero-photo-wrap">
+        <img src="Kaushal_Photo.png" alt="Kaushal Abojwar" class="hero-photo"
+          onerror="this.parentElement.innerHTML='<div class=hero-photo-placeholder><span style=font-size:2rem>👤</span><span>Add photo.jpg</span></div>'">
+        <div class="hero-badge">B.E. I&amp;C Engineering &middot; Year 3</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ ABOUT ════════ -->
+<section id="about" class="section">
+  <div class="container">
+    <div style="margin-bottom:2.5rem">
+      <span class="eyebrow">About</span>
+      <h2 class="section-title">Quick Facts</h2>
+      <p class="section-sub">An Instrumentation &amp; Control Engineering student with hands-on industry experience in PLC programming, embedded systems, and electrical panels.</p>
+    </div>
+
+    <div class="about-grid">
+      <!-- Terminal -->
+      <div class="terminal">
+        <div class="term-bar">
+          <div class="term-dots">
+            <div class="term-dot td-r"></div>
+            <div class="term-dot td-y"></div>
+            <div class="term-dot td-g"></div>
+          </div>
+          <span class="term-title">kaushal@i-and-c:~/profile$</span>
+        </div>
+        <div class="term-body" id="terminal-body">
+          <div><span class="t-p">$ </span><span class="t-t">cat quick_facts.txt</span></div>
+        </div>
+      </div>
+
+      <!-- Cards -->
+      <div style="display:flex;flex-direction:column;gap:1rem">
+        <div class="card" style="padding:1.25rem">
+          <div style="font-family:var(--f-mono);font-size:.7rem;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px">Engineering Core</div>
+          <p style="font-size:.85rem;color:var(--text-muted);line-height:1.7">Bridging digital control algorithms with physical hardware — PLC logic, sensor integration, I/O mapping, SCADA, and panel commissioning.</p>
+        </div>
+        <div class="card" style="padding:1.25rem">
+          <div style="font-family:var(--f-mono);font-size:.7rem;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px">Current Status</div>
+          <div style="display:flex;align-items:center;gap:7px;font-family:var(--f-mono);font-size:.78rem;color:#22c55e;margin-bottom:6px">
+            <span class="status-dot"></span> Open to Opportunities
+          </div>
+          <p style="font-size:.85rem;color:var(--text-muted);line-height:1.7">Year 3 of 4 — actively working on IoT and ML-based automation projects. Open to internships and collaborative engineering opportunities.</p>
+        </div>
+        <div class="card" style="padding:1.25rem">
+          <div style="font-family:var(--f-mono);font-size:.7rem;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px">Interests</div>
+          <p style="font-size:.85rem;color:var(--text-muted);line-height:1.7">Industrial Automation &middot; Embedded IoT &middot; Predictive Maintenance &middot; Control Panel Design &middot; Machine Learning for industrial data</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Stats -->
+    <div class="stats-row" style="margin-top:2.5rem">
+      <div class="stat-cell"><div class="stat-val" data-target="8.21" data-dec="2" data-suffix="/10">0</div><div class="stat-lbl">CGPA</div></div>
+      <div class="stat-cell"><div class="stat-val" data-target="3" data-suffix="+">0</div><div class="stat-lbl">Major Projects</div></div>
+      <div class="stat-cell"><div class="stat-val" data-target="3">0</div><div class="stat-lbl">PLC Platforms</div></div>
+      <div class="stat-cell"><div class="stat-val" data-target="2">0</div><div class="stat-lbl">Leadership Roles</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ EDUCATION ════════ -->
+<section id="education" class="section section-alt">
+  <div class="container">
+    <div style="margin-bottom:2.5rem">
+      <span class="eyebrow">Education</span>
+      <h2 class="section-title">Academic Background</h2>
+    </div>
+
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-year">2023 &ndash; 2027</div>
+        <div class="tl-school">D.Y. Patil College of Engineering (DYPCOE)</div>
+        <div class="tl-loc">Akurdi, Pune, Maharashtra</div>
+        <div class="tl-desc">Bachelor of Engineering in Instrumentation &amp; Control Engineering. Active in GDGC and Tarkshastra design community. Currently in Year 3.</div>
+        <span class="tl-badge">CGPA: 8.21 / 10</span>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">2023</div>
+        <div class="tl-school">Shree Maharishi Vidya Mandir</div>
+        <div class="tl-loc">Chandrapur, Maharashtra</div>
+        <div class="tl-desc">12th Standard &mdash; CBSE Board. Science stream with Physics, Chemistry, Mathematics.</div>
+        <span class="tl-badge">Result: 79%</span>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">2021</div>
+        <div class="tl-school">Shree Maharishi Vidya Mandir</div>
+        <div class="tl-loc">Chandrapur, Maharashtra</div>
+        <div class="tl-desc">10th Standard &mdash; CBSE Board. Secured distinction across all subjects.</div>
+        <span class="tl-badge">Result: 91.60%</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ EXPERIENCE ════════ -->
+<section id="experience" class="section">
+  <div class="container">
+    <div style="margin-bottom:2.5rem">
+      <span class="eyebrow">Experience</span>
+      <h2 class="section-title">Roles &amp; Internships</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem">
+
+      <div class="card">
+        <span class="card-tag">Industry &middot; Jan 2026</span>
+        <div class="card-title">Intern &mdash; Electrical / Switchgear</div>
+        <div class="card-org">ShreeTech Data Limited</div>
+        <span class="card-period">Jan 2026 &middot; On-site, Pune</span>
+        <p class="card-body">Hands-on work in Electrical Power Systems and Industrial Panels. Configured panel schematics, integrated instrumentation lines, and assisted in control-loop commissioning.</p>
+        <div class="tag-row">
+          <span class="tag">Panel Design</span><span class="tag">Switchgear</span><span class="tag">Power Systems</span><span class="tag">I&amp;C Integration</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-tag">Google &middot; 2025&ndash;2026</span>
+        <div class="card-title">Google Student Ambassador</div>
+        <div class="card-org">Google</div>
+        <span class="card-period">Sep 2025 &ndash; Jul 2026 &middot; Hybrid</span>
+        <p class="card-body">Bridge between Google's developer ecosystem and the student community. Organised tech workshops, bootcamps, and cross-functional engineering learning initiatives.</p>
+        <div class="tag-row">
+          <span class="tag">Community Leadership</span><span class="tag">Developer Advocacy</span><span class="tag">Events</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-tag">GDGC &middot; 2025&ndash;2026</span>
+        <div class="card-title">Design Lead</div>
+        <div class="card-org">GDGC DYPCOE</div>
+        <span class="card-period">Aug 2025 &ndash; Jul 2026 &middot; Hybrid</span>
+        <p class="card-body">Led the creative team delivering unified branding, UI assets, and visual systems for community hackathons and developer events at college.</p>
+        <div class="tag-row">
+          <span class="tag">Adobe Illustrator</span><span class="tag">Photoshop</span><span class="tag">UI/UX</span><span class="tag">Branding</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-tag">Tarkshastra &middot; 2024&ndash;2025</span>
+        <div class="card-title">Design Lead</div>
+        <div class="card-org">Tarkshastra</div>
+        <span class="card-period">Sep 2024 &ndash; Aug 2025 &middot; Hybrid</span>
+        <p class="card-body">Steered design direction for community marketing materials, digital assets, and graphic concepts; implemented brand layout guidelines across all channels.</p>
+        <div class="tag-row">
+          <span class="tag">Adobe Illustrator</span><span class="tag">Photoshop</span><span class="tag">Brand Identity</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ════════ PROJECTS (TABBED) ════════ -->
+<section id="projects" class="section section-alt">
+  <div class="container">
+    <div style="margin-bottom:2.5rem">
+      <span class="eyebrow">Projects</span>
+      <h2 class="section-title">Engineering Work</h2>
+      <p class="section-sub">Hands-on embedded, IoT, and ML systems built as academic and personal projects.</p>
+    </div>
+
+    <div class="proj-tabs">
+      <button class="proj-tab active" onclick="switchProject(0)">01. Smart Irrigation</button>
+      <button class="proj-tab"        onclick="switchProject(1)">02. Food Spoilage AI</button>
+      <button class="proj-tab"        onclick="switchProject(2)">03. Railway Monitoring</button>
+    </div>
+
+    <div class="proj-panel" id="proj-panel">
+      <!-- filled by JS -->
+    </div>
+  </div>
+</section>
+
+<!-- ════════ SKILLS ════════ -->
+<section id="skills" class="section">
+  <div class="container">
+    <div style="margin-bottom:2.5rem">
+      <span class="eyebrow">Skills</span>
+      <h2 class="section-title">Tools &amp; Technologies</h2>
+    </div>
+
+    <!-- Marquee -->
+    <div class="marquee-wrap">
+      <div class="marquee-track">
+        <span class="marquee-chip">Siemens TIA Portal</span><span class="marquee-dot"></span>
+        <span class="marquee-chip">Allen-Bradley</span><span class="marquee-dot"></span>
+        <span class="marquee-chip">ABB Control Builder</span><span class="marquee-dot"></span>
+        <span class="marquee-chip">Arduino UNO</span><span class="marquee-dot"></span>
+        <span class="marquee-chip">ESP32</span><span class="marquee-dot"></span>
+        <span class="marquee-chip">Embedded C</span><span class="marquee-dot"></span>
+        <span class="marquee-chip">Python</span><span class="marquee-dot"></span>
+        <span class="marquee-chip">OpenCV</span><span class="marquee-dot"></span>
+        <span class="marquee-chip">TensorFlow Lite</span><span class="marquee-dot"></span>
+        <span class="marquee-chip">Firebase</span><span class="marquee-dot"></span>
+        <span class="marquee-chip">LPWAN / LoRa</span><span class="marquee-dot"></span>
+        <span class="marquee-chip">Panel Wiring</span><span class="marquee-dot"></span>
+        <span class="marquee-chip">Siemens TIA Portal</span><span class="marquee-dot"></span>
+        <span class="marquee-chip">Allen-Bradley</span><span class="marquee-dot"></span>
+        <span class="marquee-chip">ABB Control Builder</span><span class="marquee-dot"></span>
+        <span class="marquee-chip">Arduino UNO</span><span class="marquee-dot"></span>
+        <span class="marquee-chip">ESP32</span><span class="marquee-dot"></span>
+        <span class="marquee-chip">Embedded C</span><span class="marquee-dot"></span>
+        <span class="marquee-chip">Python</span><span class="marquee-dot"></span>
+        <span class="marquee-chip">OpenCV</span><span class="marquee-dot"></span>
+        <span class="marquee-chip">TensorFlow Lite</span><span class="marquee-dot"></span>
+        <span class="marquee-chip">Firebase</span><span class="marquee-dot"></span>
+        <span class="marquee-chip">LPWAN / LoRa</span><span class="marquee-dot"></span>
+        <span class="marquee-chip">Panel Wiring</span>
+      </div>
+    </div>
+
+    <div class="skills-grid">
+      <div class="skill-group">
+        <div class="sg-title">01 &middot; Automation &amp; PLCs</div>
+        <ul class="sg-list">
+          <li>Siemens (TIA Portal, STEP 7)</li>
+          <li>Allen-Bradley (RSLogix 5000)</li>
+          <li>ABB Control Systems</li>
+          <li>Electrical Panel Design</li>
+          <li>Switchgear Configuration</li>
+        </ul>
+      </div>
+      <div class="skill-group">
+        <div class="sg-title">02 &middot; Embedded &amp; IoT</div>
+        <ul class="sg-list">
+          <li>Arduino UNO / Nano</li>
+          <li>ESP32 Microcontroller</li>
+          <li>Firebase / Blynk pipelines</li>
+          <li>LPWAN (LoRa) networks</li>
+          <li>Real-time telemetry</li>
+        </ul>
+      </div>
+      <div class="skill-group">
+        <div class="sg-title">03 &middot; ML &amp; Vision</div>
+        <ul class="sg-list">
+          <li>OpenCV image analysis</li>
+          <li>TensorFlow Lite inference</li>
+          <li>SVM classification</li>
+          <li>RNN sequence modelling</li>
+          <li>Sensor data analytics</li>
+        </ul>
+      </div>
+      <div class="skill-group">
+        <div class="sg-title">04 &middot; Programming</div>
+        <ul class="sg-list">
+          <li>Embedded C</li>
+          <li>Python (data &amp; ML)</li>
+          <li>Ladder Logic / FBD</li>
+          <li>Sensor calibration</li>
+          <li>Git version control</li>
+        </ul>
+      </div>
+      <div class="skill-group">
+        <div class="sg-title">05 &middot; Design</div>
+        <ul class="sg-list">
+          <li>Adobe Illustrator</li>
+          <li>Adobe Photoshop</li>
+          <li>Brand identity design</li>
+          <li>Event / print assets</li>
+          <li>UI mockups</li>
+        </ul>
+      </div>
+      <div class="skill-group">
+        <div class="sg-title">06 &middot; Leadership</div>
+        <ul class="sg-list">
+          <li>Team management</li>
+          <li>Event coordination</li>
+          <li>Community building</li>
+          <li>Project planning</li>
+          <li>Stakeholder communication</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ CONTACT ════════ -->
+<section id="contact" class="section section-alt">
+  <div class="container">
+    <div style="margin-bottom:2.5rem">
+      <span class="eyebrow">Contact</span>
+      <h2 class="section-title">Let's Connect</h2>
+      <p class="section-sub">Open to automation engineering roles, PLC programming discussions, IoT collaborations, and design partnerships.</p>
+    </div>
+
+    <div class="contact-grid">
+      <div>
+        <div class="contact-info">
+          <div class="ci-row">
+            <span class="ci-key">Email</span>
+            <a href="mailto:abojwarkaushal@gmail.com" style="color:var(--accent);font-family:var(--f-mono);font-size:.82rem">abojwarkaushal@gmail.com</a>
+          </div>
+          <div class="ci-row">
+            <span class="ci-key">Location</span>
+            <span class="ci-val">Pune, Maharashtra, India</span>
+          </div>
+          <div class="ci-row">
+            <span class="ci-key">Status</span>
+            <span style="color:#22c55e;font-family:var(--f-mono);font-size:.8rem;font-weight:700">Open to opportunities</span>
+          </div>
+        </div>
+
+        <div class="social-row">
+          <a href="https://www.behance.net/kaushalabojwar" target="_blank" rel="noopener" class="social-btn" title="Behance">Be</a>
+          <a href="https://www.linkedin.com/in/kaushalvabojwar/" target="_blank" rel="noopener" class="social-btn" title="LinkedIn">in</a>
+          <a href="https://github.com/kaushalvabojwar-gif" target="_blank" rel="noopener" class="social-btn" title="GitHub">GH</a>
+        </div>
+
+        <a href="Kaushal_Resume.pdf" download class="btn btn-solid" style="margin-top:1.25rem;display:inline-flex">&#8595; Download Resume</a>
+      </div>
+
+      <div>
+        <form class="cf-form" onsubmit="sendEmail(event)">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem">
+            <div>
+              <label class="cf-label" for="cf-name">Name</label>
+              <input id="cf-name" name="uname" type="text" required placeholder="Your name" class="cf-input">
+            </div>
+            <div>
+              <label class="cf-label" for="cf-email">Email</label>
+              <input id="cf-email" name="uemail" type="email" required placeholder="Your email" class="cf-input">
+            </div>
+          </div>
+          <div style="margin-bottom:1.25rem">
+            <label class="cf-label" for="cf-msg">Message</label>
+            <textarea id="cf-msg" name="umsg" rows="5" required placeholder="Tell me about your project or collaboration idea..." class="cf-input" style="resize:vertical"></textarea>
+          </div>
+          <button type="submit" class="btn btn-solid" style="width:100%;justify-content:center">Send Message &#8594;</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ FOOTER ════════ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-name">Kaushal<br>Abojwar</div>
+        <div class="footer-tagline">Automation &middot; Controls &middot; IoT</div>
+        <div class="footer-status"><span class="status-dot"></span> Open to Opportunities</div>
+      </div>
+      <div>
+        <div class="footer-section-title">Navigation</div>
+        <button class="footer-link" onclick="scrollTo('home')">01 &mdash; Home</button>
+        <button class="footer-link" onclick="scrollTo('about')">02 &mdash; About</button>
+        <button class="footer-link" onclick="scrollTo('education')">03 &mdash; Education</button>
+        <button class="footer-link" onclick="scrollTo('experience')">04 &mdash; Experience</button>
+        <button class="footer-link" onclick="scrollTo('projects')">05 &mdash; Projects</button>
+        <button class="footer-link" onclick="scrollTo('skills')">06 &mdash; Skills</button>
+        <button class="footer-link" onclick="scrollTo('contact')">07 &mdash; Contact</button>
+      </div>
+      <div>
+        <div class="footer-section-title">Connect</div>
+        <div style="display:flex;gap:6px;margin-bottom:1rem">
+          <a href="https://www.behance.net/kaushalabojwar" target="_blank" class="footer-social" title="Behance">Be</a>
+          <a href="https://www.linkedin.com/in/kaushalvabojwar/" target="_blank" class="footer-social" title="LinkedIn">in</a>
+          <a href="https://github.com/kaushalvabojwar-gif" target="_blank" class="footer-social" title="GitHub">GH</a>
+        </div>
+        <a href="Kaushal_Resume.pdf" download class="footer-link" style="display:inline-flex;align-items:center;gap:5px;margin-bottom:8px">&#8595; Download Resume</a><br>
+        <button class="back-top" onclick="scrollTo('home')">&#8593; Back to Top</button>
+      </div>
+    </div>
+    <div class="footer-copy">
+      <span>&copy; 2026 Kaushal Abojwar. All rights reserved.</span>
+      <span>B.E. Instrumentation &amp; Control Engineering</span>
+    </div>
+  </div>
+</footer>
+
+</div><!-- .page -->
+
+<script src="app.js"></script>
+</body>
+</html>
