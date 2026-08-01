@@ -466,21 +466,6 @@ img {
   flex-shrink: 0;
 }
 
-.hero-badge {
-  position: absolute;
-  bottom: -10px;
-  right: -10px;
-  background: var(--accent);
-  color: #fff;
-  font-family: var(--f-mono);
-  font-size: 0.62rem;
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  padding: 5px 10px;
-  border-radius: 4px;
-  white-space: nowrap;
-}
-
 /* ══════════════════════════════════════
    BUTTONS
 ══════════════════════════════════════ */
