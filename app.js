@@ -70,35 +70,35 @@ const TERMINAL_FACTS = [
 ];
 
 /* ── SCROLL HELPER ── */
-window.scrollTo = function(id) {
+window.scrollTo = function (id) {
   const el = document.getElementById(id);
   if (el) el.scrollIntoView({ behavior: "smooth" });
 };
 
 /* ── MOBILE MENU ── */
-window.toggleMenu = function() {
+window.toggleMenu = function () {
   const menu = document.getElementById("mobile-menu");
   menu.classList.toggle("open");
 };
 
 /* ── NAVBAR SCROLL SPY ── */
-(function() {
-  const sections = ["home","about","education","experience","projects","skills","contact"];
-  window.addEventListener("scroll", function() {
+(function () {
+  const sections = ["home", "about", "education", "experience", "projects", "skills", "contact"];
+  window.addEventListener("scroll", function () {
     const y = window.scrollY + 80;
     let current = "home";
-    sections.forEach(function(id) {
+    sections.forEach(function (id) {
       const el = document.getElementById(id);
       if (el && y >= el.offsetTop) current = id;
     });
-    document.querySelectorAll(".navbar-link").forEach(function(btn) {
+    document.querySelectorAll(".navbar-link").forEach(function (btn) {
       btn.classList.toggle("active", btn.dataset.section === current);
     });
   }, { passive: true });
 })();
 
 /* ── TYPEWRITER ── */
-(function() {
+(function () {
   const el = document.getElementById("typewriter");
   if (!el) return;
   let ri = 0, ci = 0, deleting = false;
@@ -121,7 +121,7 @@ window.toggleMenu = function() {
 })();
 
 /* ── TERMINAL ANIMATION ── */
-(function() {
+(function () {
   const body = document.getElementById("terminal-body");
   if (!body) return;
   let li = 0;
@@ -129,7 +129,7 @@ window.toggleMenu = function() {
   function nextLine() {
     if (li >= TERMINAL_FACTS.length) {
       // Loop after a pause
-      setTimeout(function() {
+      setTimeout(function () {
         body.innerHTML = '<div><span class="t-p">$ </span><span class="t-t">cat quick_facts.txt</span></div>';
         li = 0;
         setTimeout(nextLine, 500);
@@ -175,7 +175,7 @@ function renderProject(idx) {
 
   panel.innerHTML = `
     <div class="card" style="padding:2rem">
-      <div style="display:flex;align-items:center;gap:10px;margin-bottom:1rem">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:1.05rem">
         <div style="width:38px;height:38px;border-radius:6px;background:var(--accent-dim);border:1px solid rgba(220,38,38,.2);display:flex;align-items:center;justify-content:center;color:var(--accent);font-family:var(--f-mono);font-size:.75rem;font-weight:700;flex-shrink:0">${p.num}</div>
         <div>
           <div class="card-title">${p.title}</div>
@@ -193,34 +193,34 @@ function renderProject(idx) {
   `;
 }
 
-window.switchProject = function(idx) {
+window.switchProject = function (idx) {
   currentProject = idx;
-  document.querySelectorAll(".proj-tab").forEach(function(btn, i) {
+  document.querySelectorAll(".proj-tab").forEach(function (btn, i) {
     btn.classList.toggle("active", i === idx);
   });
   renderProject(idx);
 };
 
 // Init first project
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
   renderProject(0);
 
   /* ── STAT COUNTERS ── */
   const stats = document.querySelectorAll(".stat-val[data-target]");
-  const observer = new IntersectionObserver(function(entries) {
-    entries.forEach(function(entry) {
+  const observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
       if (!entry.isIntersecting) return;
       observer.unobserve(entry.target);
-      const el    = entry.target;
+      const el = entry.target;
       const target = parseFloat(el.dataset.target);
-      const dec    = parseInt(el.dataset.dec || "0");
+      const dec = parseInt(el.dataset.dec || "0");
       const suffix = el.dataset.suffix || "";
-      const dur    = 1200;
-      const step   = 16;
-      const steps  = dur / step;
+      const dur = 1200;
+      const step = 16;
+      const steps = dur / step;
       let cur = 0;
       const inc = target / steps;
-      const timer = setInterval(function() {
+      const timer = setInterval(function () {
         cur = Math.min(cur + inc, target);
         el.textContent = cur.toFixed(dec) + suffix;
         if (cur >= target) clearInterval(timer);
@@ -228,16 +228,16 @@ document.addEventListener("DOMContentLoaded", function() {
     });
   }, { threshold: 0.3 });
 
-  stats.forEach(function(el) { observer.observe(el); });
+  stats.forEach(function (el) { observer.observe(el); });
 });
 
 /* ── CONTACT FORM ── */
-window.sendEmail = function(e) {
+window.sendEmail = function (e) {
   e.preventDefault();
-  const name  = document.getElementById("cf-name").value;
+  const name = document.getElementById("cf-name").value;
   const email = document.getElementById("cf-email").value;
-  const msg   = document.getElementById("cf-msg").value;
-  const sub   = encodeURIComponent("Portfolio Contact from " + name);
-  const body  = encodeURIComponent("From: " + name + " <" + email + ">\n\n" + msg);
+  const msg = document.getElementById("cf-msg").value;
+  const sub = encodeURIComponent("Portfolio Contact from " + name);
+  const body = encodeURIComponent("From: " + name + " <" + email + ">\n\n" + msg);
   window.open("mailto:abojwarkaushal@gmail.com?subject=" + sub + "&body=" + body);
 };
