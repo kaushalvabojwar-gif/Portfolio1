@@ -434,7 +434,7 @@ img {
 
 /* Hero photo */
 .hero-photo {
-  width: 220px;
+  width: 250px;
   height: 265px;
   object-fit: cover;
   object-position: top center;
